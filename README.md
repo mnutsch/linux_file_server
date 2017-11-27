@@ -1,5 +1,7 @@
 # linux_file_server
-This is a file server written in C for my Networking class. An example client written in Python is also provided.
+Description
+This is a file server written in C for my Networking class at OSU. The server is intended to run on a Linux server and be compiled with gcc. 
+An example client written in Python is also provided.
 
 INSTRUCTIONS
 
