@@ -209,48 +209,6 @@ int sendDataToPeer(char * destinationHostAddress, int destinationHostPort, char 
 }
 
 /********************************************************
- * void executeCommand()
- * Date: 11/25/2017
- * Author: Matt Nutsch
- * Description: Read the directory contents 
- * Based in part on the example at: http://www.csl.mtu.edu/cs4411.ck/www/NOTES/process/fork/exec.html
- ********************************************************/
-void executeCommand()
-{
-	char ** commandStrings;
-	
-	commandStrings[0] = "ls"; //DEV NOTE: change this
-	
-    pid_t pid;
-    int status = 0;
-	
-    if ((pid = fork()) < 0) 
-	{     
-		/* fork a child process */
-        printf("*** ERROR: forking child process failed\n");
-        exit(1);
-    }
-    else if (pid == 0) 
-	{          
-		/* for the child process: */
-        if (execvp(*commandStrings, commandStrings) < 0) 
-		{     
-			/* execute the command  */
-            printf("*** ERROR: exec failed\n");
-            exit(1);
-		}
-    }
-    else 
-	{                                  
-		/* for the parent: */
-        while (wait(&status) != pid)
-		{
-			/* wait for completion  */
-        }
-    }
-}
-
-/********************************************************
  * void *connection_handler(void *socket_desc)
  * Date: 11/25/2017
  * Author: Matt Nutsch
