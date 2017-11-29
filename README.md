@@ -6,7 +6,7 @@ An example client written in Python is also provided.
 INSTRUCTIONS
 
 Set up:
-	Unzip this file to a Linux based server, such as OSU's flip
+	Unzip this file to a Linux based server, such as OSU's flip.
 	Compile the server with the commands:
 		cd server
 		gcc -pthread -o ftserver ftserver.c
